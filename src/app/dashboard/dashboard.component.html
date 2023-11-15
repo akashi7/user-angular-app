@@ -1,0 +1,7 @@
+<div>
+  <app-header></app-header>
+  <div [ngSwitch]="role"  class="container" >
+    <div *ngSwitchCase="'user'" > Hello Standard User </div>
+    <div *ngSwitchCase="'admin'"  class="bg-red-500" >Hello Admin</div>
+  </div>
+</div>
