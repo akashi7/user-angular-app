@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { loginInterface } from '../form/interface';
 import { UserService } from '../services/user.service';
-import { loginInterface } from './interface';
 
 @Component({
   selector: 'app-login',
@@ -9,12 +9,9 @@ import { loginInterface } from './interface';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  form: loginInterface = {
-    role: '',
-  };
   constructor(private route: Router, private userService: UserService) {}
-  onSubmit(): void {
-    this.userService.setLocalStorage(this.form.role);
+  onSubmit(formValue: loginInterface): void {
+    this.userService.setLocalStorage(formValue.role);
     this.route.navigate(['/dashboard']);
   }
 }

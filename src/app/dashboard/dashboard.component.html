@@ -1,7 +1,9 @@
-<div>
+<div class="h-[100%]">
   <app-header></app-header>
-  <div [ngSwitch]="role"  class="container" >
-    <div *ngSwitchCase="'user'" > Hello Standard User </div>
-    <div *ngSwitchCase="'admin'"  class="bg-red-500" >Hello Admin</div>
+  <div [ngSwitch]="role" class="text-center mt-[50px]">
+    <div>
+      <div *ngSwitchCase="'user'" class="text-3xl">Hello Standard User</div>
+      <div *ngSwitchCase="'admin'" class="text-3xl">Hello Admin</div>
+    </div>
   </div>
 </div>
